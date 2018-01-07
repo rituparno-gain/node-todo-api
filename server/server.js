@@ -32,10 +32,20 @@ app.post('/todos',(request, response) => {
   todo.save().then((doc) => {
     response.send(doc);
   },(err) => {
-    response.send(err);
+    response.status(400).send(err);
+  });
+});
+
+app.get('/todos', (request,response) => {
+  Todo.find().then((todos) => {
+    response.send({todos});
+  }, (err) => {
+    response.status(400).send(err);
   });
 });
 
 app.listen(port,() => {
   console.log(`API started on port ${port}`);
 });
+
+module.exports = {app};
