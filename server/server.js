@@ -1,1 +1,1 @@
-var mongoose = require(./db/mongoose.js);
+var {mongoose} = require('./db/mongoose');

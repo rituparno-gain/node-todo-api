@@ -16,3 +16,5 @@ var Todo = mongoose.model('todos',{
     default: null
   }
 });
+
+model.exports = {Todo};
